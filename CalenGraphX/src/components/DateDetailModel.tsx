@@ -35,10 +35,13 @@ export default function DateDetailModel({
       onRequestClose={onRequestClose}
       overlayClassName="modal-overlay"
       className="modal-content">
-      <h3>{dateKey ? format(parse(dateKey, "dd-MM-yyyy", new Date()), "do MMM yyyy") : ""}</h3>
+      <button className="modal-close-btn" onClick={onRequestClose}>✕</button>
+       <h3 className="modal-heading">
+        {dateKey ? format(parse(dateKey, "dd-MM-yyyy", new Date()), "do MMM yyyy") : ""}
+      </h3>
 
       {!dataForDate || dataForDate.length === 0 ? (
-        <div>No data found for {dateKey}</div>
+        <div className="no-data-text">No data found for {dateKey}</div>
       ) : (
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={chartData}>
@@ -49,8 +52,6 @@ export default function DateDetailModel({
           </BarChart>
         </ResponsiveContainer>
       )}
-
-      <button onClick={onRequestClose}>Close</button>
     </Modal>
   );
 }

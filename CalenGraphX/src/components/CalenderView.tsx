@@ -10,14 +10,7 @@ import DateDetailModel from "./DateDetailModel";
 
 const dummyData = rawDummyData as DateDataMap;
 const locales = { "en-US": enUS };
-const localizer = dateFnsLocalizer({
-  format,
-  parse,
-  startOfWeek,
-  getDay,
-  locales,
-});
-
+const localizer = dateFnsLocalizer({format, parse, startOfWeek, getDay,locales,});
 type EventItem = {
   title: string;
   start: Date;

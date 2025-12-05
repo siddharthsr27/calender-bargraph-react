@@ -1,107 +1,163 @@
-/* Global Layout */
 .app-container {
   font-family: "Inter", sans-serif;
-  background: #f5f7fb;
+  background: #eef1f7;
   min-height: 100vh;
-  padding: 20px;
+  padding: 25px;
 }
 
-/* Header Section */
 .app-header {
   display: flex;
   justify-content: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .logo-title {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   background: #ffffff;
-  padding: 12px 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  padding: 14px 24px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.25s ease;
+}
+
+.logo-title:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
 }
 
 .app-logo {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
 }
 
 .app-title {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 900;
   margin: 0;
-  background: linear-gradient(45deg, #007bff, #00c49a);
+  background: linear-gradient(90deg, #0066ff, #00c49a);
   -webkit-background-clip: text;
   color: transparent;
+  letter-spacing: 1px;
 }
 
-/* Calendar Card */
 .calendar-card {
   background: white;
-  padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-  max-width: 1200px;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  max-width: 1250px;
   margin: 0 auto;
+  transition: 0.2s ease;
 }
 
-/* Highlight days with data */
+.calendar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
 .has-data {
-  background: #e6f4ff !important;
-  border: 1px solid #b3d8ff !important;
-  border-radius: 4px;
+  background: #eaf4ff !important;
+  border: 1px solid #f2afaf !important;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #f71201 !important;
 }
 
-/* Modal Styling */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000;
+  z-index: 3000;
 }
 
 .modal-content {
   background: #ffffff;
-  padding: 24px;
-  border-radius: 20px;
-  width: min(500px, 95%);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-  animation: fadeIn 0.25s ease;
+  padding: 30px;
+  border-radius: 22px;
+  width: min(500px, 90%);
+  position: relative;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+  animation: scaleFade 0.25s ease-out;
 }
 
 .modal-content h3 {
   margin-top: 0;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 22px;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(90deg, #0066ff, #00c49a);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.5px;
 }
 
-/* Close Button */
-.close-btn {
-  background: #f0f0f0;
+.modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ffffff;
   border: none;
-  padding: 8px 12px;
-  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
   cursor: pointer;
-  transition: 0.2s;
+  color: #555;
+  padding: 4px 10px;
+  border-radius: 50%;
+  transition: 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
-.close-btn:hover {
-  background: #e0e0e0;
+.modal-close-btn:hover {
+  background: #ff4d4d;
+  color: white;
+  transform: scale(1.15);
 }
 
-/* Fade animation */
+.no-data-text {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #d62828;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
     transform: translateY(0px);
   }
 }
+
+@keyframes scaleFade {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rbc-event {
+  background: #d7263d !important;
+  border: 1px solid #b31d31 !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+}
+
+.rbc-event:hover {
+  background: #b31d31 !important;
+}
+
